@@ -1,4 +1,5 @@
 package youtube;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import youtube.config.kafka.KafkaProcessor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,6 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableBinding(KafkaProcessor.class)
 @EnableFeignClients
+@EnableScheduling
 public class Application {
     protected static ApplicationContext applicationContext;
     public static void main(String[] args) {

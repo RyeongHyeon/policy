@@ -1,8 +1,15 @@
 package youtube;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.BeanUtils;
-import java.util.List;
+import org.springframework.cloud.stream.messaging.Processor;
+import org.springframework.integration.support.MessageBuilder;
+import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.MessageHeaders;
+import org.springframework.util.MimeTypeUtils;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="PolicyManagement_table")
@@ -21,16 +28,9 @@ public class PolicyManagement {
         BeanUtils.copyProperties(this, checkedPolicy);
         checkedPolicy.publishAfterCommit();
 
-
         ModifiedPolicy modifiedPolicy = new ModifiedPolicy();
         BeanUtils.copyProperties(this, modifiedPolicy);
         modifiedPolicy.publishAfterCommit();
-
-
-        CreatedPolicy createdPolicy = new CreatedPolicy();
-        BeanUtils.copyProperties(this, createdPolicy);
-        createdPolicy.publishAfterCommit();
-
 
         CheckedRefundPolicy checkedRefundPolicy = new CheckedRefundPolicy();
         BeanUtils.copyProperties(this, checkedRefundPolicy);
