@@ -7,7 +7,9 @@ public class DeletedPolicy extends AbstractEvent {
     private String deleteVideoName;
     private Integer violationCount;
     private Long deleteVideoId;
-
+    public DeletedPolicy(){
+        super();
+    }
     public Long getDeleteVideoId() {
         return deleteVideoId;
     }
@@ -15,9 +17,7 @@ public class DeletedPolicy extends AbstractEvent {
     public void setDeleteVideoId(Long deleteVideoId) {
         this.deleteVideoId = deleteVideoId;
     }
-    public DeletedPolicy(){
-        super();
-    }
+
 
     public String getPolicyId() {
         return policyId;

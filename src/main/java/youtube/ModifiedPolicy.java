@@ -2,7 +2,7 @@ package youtube;
 
 public class ModifiedPolicy extends AbstractEvent {
 
-    private String policyId;
+    private Long policyId;
     private Long refundPolicy;
     private String deleteVideoName;
     private Integer violationCount;
@@ -11,11 +11,11 @@ public class ModifiedPolicy extends AbstractEvent {
         super();
     }
 
-    public String getPolicyId() {
+    public Long getPolicyId() {
         return policyId;
     }
 
-    public void setPolicyId(String policyId) {
+    public void setPolicyId(Long policyId) {
         this.policyId = policyId;
     }
     public Long getRefundPolicy() {

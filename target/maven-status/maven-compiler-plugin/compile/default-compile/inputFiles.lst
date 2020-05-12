@@ -8,6 +8,7 @@ C:\policy\src\main\java\youtube\config\kafka\KafkaProcessor.java
 C:\policy\src\main\java\youtube\CheckedPolicy.java
 C:\policy\src\main\java\youtube\CheckedRefundPolicy.java
 C:\policy\src\main\java\youtube\EditedVideo.java
+C:\policy\src\main\java\youtube\DeletedPolicy.java
 C:\policy\src\main\java\youtube\Application.java
 C:\policy\src\main\java\youtube\PolicyManagement.java
 C:\policy\src\main\java\youtube\UploadedVideo.java

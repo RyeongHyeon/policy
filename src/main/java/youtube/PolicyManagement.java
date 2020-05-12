@@ -17,10 +17,11 @@ public class PolicyManagement {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private String policyId;
+    private Long policyId;
     private Long refundPolicy;
     private String deleteVideoName;
     private Integer violationCount;
+    private Long deleteVideoId;
 
     @PrePersist
     public void onPrePersist(){
@@ -35,16 +36,21 @@ public class PolicyManagement {
         CheckedRefundPolicy checkedRefundPolicy = new CheckedRefundPolicy();
         BeanUtils.copyProperties(this, checkedRefundPolicy);
         checkedRefundPolicy.publishAfterCommit();
+    }
 
-
+    @PostRemove
+    public void onPostRemove(){
+        DeletedPolicy deletedPolicy = new DeletedPolicy();
+        BeanUtils.copyProperties(this, deletedPolicy);
+        deletedPolicy.publishAfterCommit();
     }
 
 
-    public String getPolicyId() {
+    public Long getPolicyId() {
         return policyId;
     }
 
-    public void setPolicyId(String policyId) {
+    public void setPolicyId(Long policyId) {
         this.policyId = policyId;
     }
     public Long getRefundPolicy() {
@@ -69,7 +75,11 @@ public class PolicyManagement {
         this.violationCount = violationCount;
     }
 
+    public Long getDeleteVideoId() {
+        return deleteVideoId;
+    }
 
-
-
+    public void setDeleteVideoId(Long deleteVideoId) {
+        this.deleteVideoId = deleteVideoId;
+    }
 }

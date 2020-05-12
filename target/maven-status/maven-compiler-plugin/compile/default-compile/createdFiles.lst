@@ -1,5 +1,6 @@
 youtube\ModifiedPolicy.class
 youtube\CreatedPolicy.class
+youtube\DeletedPolicy.class
 youtube\config\kafka\KafkaProcessor.class
 youtube\CheckedPolicy.class
 youtube\Application.class

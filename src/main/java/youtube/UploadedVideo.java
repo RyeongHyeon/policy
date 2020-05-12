@@ -1,22 +1,26 @@
-
 package youtube;
 
 import java.util.Date;
 
 public class UploadedVideo extends AbstractEvent {
 
-    private String videoId;
+    private Long videoId;
     private Date uploadTime;
-    private String clientID;
-    private String channelId;
+    private Long clientId;
+    private Long channelId;
 
-    public String getVideoId() {
+    public UploadedVideo(){
+        super();
+    }
+
+    public Long getVideoId() {
         return videoId;
     }
 
-    public void setVideoId(String videoId) {
+    public void setVideoId(Long videoId) {
         this.videoId = videoId;
     }
+
     public Date getUploadTime() {
         return uploadTime;
     }
@@ -24,18 +28,20 @@ public class UploadedVideo extends AbstractEvent {
     public void setUploadTime(Date uploadTime) {
         this.uploadTime = uploadTime;
     }
-    public String getClientId() {
-        return clientID;
+
+    public Long getClientId() {
+        return clientId;
     }
 
-    public void setClientId(String clientID) {
-        this.clientID = clientID;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
-    public String getChannelId() {
+
+    public Long getChannelId() {
         return channelId;
     }
 
-    public void setChannelId(String channelId) {
+    public void setChannelId(Long channelId) {
         this.channelId = channelId;
     }
 }
