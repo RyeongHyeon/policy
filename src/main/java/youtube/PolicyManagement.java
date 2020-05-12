@@ -25,17 +25,20 @@ public class PolicyManagement {
 
     @PrePersist
     public void onPrePersist(){
-        CheckedPolicy checkedPolicy = new CheckedPolicy();
-        BeanUtils.copyProperties(this, checkedPolicy);
-        checkedPolicy.publishAfterCommit();
-
-        ModifiedPolicy modifiedPolicy = new ModifiedPolicy();
-        BeanUtils.copyProperties(this, modifiedPolicy);
-        modifiedPolicy.publishAfterCommit();
-
-        CheckedRefundPolicy checkedRefundPolicy = new CheckedRefundPolicy();
-        BeanUtils.copyProperties(this, checkedRefundPolicy);
-        checkedRefundPolicy.publishAfterCommit();
+//        CheckedPolicy checkedPolicy = new CheckedPolicy();
+//        BeanUtils.copyProperties(this, checkedPolicy);
+//        checkedPolicy.publishAfterCommit();
+//        System.out.println("checkedPolicy :  " +checkedPolicy);
+//
+//        ModifiedPolicy modifiedPolicy = new ModifiedPolicy();
+//        BeanUtils.copyProperties(this, modifiedPolicy);
+//        modifiedPolicy.publishAfterCommit();
+//        System.out.println("modifiedPolicy :  " +modifiedPolicy);
+//
+//        CheckedRefundPolicy checkedRefundPolicy = new CheckedRefundPolicy();
+//        BeanUtils.copyProperties(this, checkedRefundPolicy);
+//        checkedRefundPolicy.publishAfterCommit();
+//        System.out.println("checkedRefundPolicy :  " +checkedRefundPolicy);
     }
 
     @PostRemove
