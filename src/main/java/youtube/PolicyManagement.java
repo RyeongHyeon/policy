@@ -16,6 +16,11 @@ public class PolicyManagement {
     private Integer violationCount;
     private Long deleteVideoId;
 
+    // 강령현 추가
+    private int adMin;
+    private int adCnt;
+    private int adPrice;
+
     @PrePersist
     public void onPrePersist(){
 //        CheckedPolicy checkedPolicy = new CheckedPolicy();
@@ -40,6 +45,7 @@ public class PolicyManagement {
         BeanUtils.copyProperties(this, deletedPolicy);
         deletedPolicy.publishAfterCommit();
     }
+
 
 
     public Long getPolicyId() {
@@ -77,5 +83,32 @@ public class PolicyManagement {
 
     public void setDeleteVideoId(Long deleteVideoId) {
         this.deleteVideoId = deleteVideoId;
+    }
+
+    //==============================강령현 추가
+
+
+    public int getAdMin() {
+        return adMin;
+    }
+
+    public void setAdMin(int adMin) {
+        this.adMin = adMin;
+    }
+
+    public int getAdCnt() {
+        return adCnt;
+    }
+
+    public void setAdCnt(int adCnt) {
+        this.adCnt = adCnt;
+    }
+
+    public int getAdPrice() {
+        return adPrice;
+    }
+
+    public void setAdPrice(int adPrice) {
+        this.adPrice = adPrice;
     }
 }
