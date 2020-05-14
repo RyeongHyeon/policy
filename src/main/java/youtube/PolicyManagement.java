@@ -16,6 +16,12 @@ public class PolicyManagement {
     private Integer violationCount;
     private Long deleteVideoId;
 
+    //강령현 추가
+    private String policyName; // 정책 명
+    private int adMin; // 광고 분
+    private int adCnt; // 광고 수
+    private int adMinCntPrice; // 광고의 분당 횟수의 가격 책정
+
     @PrePersist
     public void onPrePersist(){
 //        CheckedPolicy checkedPolicy = new CheckedPolicy();
@@ -77,5 +83,40 @@ public class PolicyManagement {
 
     public void setDeleteVideoId(Long deleteVideoId) {
         this.deleteVideoId = deleteVideoId;
+    }
+
+    //=====================강령현 추가
+
+
+    public String getPolicyName() {
+        return policyName;
+    }
+
+    public void setPolicyName(String policyName) {
+        this.policyName = policyName;
+    }
+
+    public int getAdMin() {
+        return adMin;
+    }
+
+    public void setAdMin(int adMin) {
+        this.adMin = adMin;
+    }
+
+    public int getAdCnt() {
+        return adCnt;
+    }
+
+    public void setAdCnt(int adCnt) {
+        this.adCnt = adCnt;
+    }
+
+    public int getAdMinCntPrice() {
+        return adMinCntPrice;
+    }
+
+    public void setAdMinCntPrice(int adMinCntPrice) {
+        this.adMinCntPrice = adMinCntPrice;
     }
 }
