@@ -5,6 +5,8 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 import youtube.config.kafka.KafkaProcessor;
 
+import java.security.Policy;
+
 @Service
 public class PolicyHandler{
 
@@ -18,6 +20,8 @@ public class PolicyHandler{
         }
 
     }
+
+
     @StreamListener(KafkaProcessor.INPUT)
     public void wheneverUploadedVideo_CheckPolicy(@Payload UploadedVideo uploadedVideo){
 
@@ -40,6 +44,18 @@ public class PolicyHandler{
                 System.out.println("############# 동영상 수정이 가능합니다 ################");
             }
             System.out.println("##### listener CheckPolicy : " + editedVideo.toJson());
+        }
+    }
+
+    @StreamListener(KafkaProcessor.INPUT)
+    public void wheneverAdRegistered_CheckPolicy(@Payload AdRegistered adRegistered){
+
+        if(adRegistered.isMe()){
+            if(adRegistered.getAdId()!=null){
+                System.out.println("############# 광고 등록이 가능합니다. ################");
+
+            }
+            System.out.println("##### listener CheckPolicy : " + adRegistered.toJson());
         }
     }
 
